@@ -79,7 +79,7 @@ nav {
 }
 
 .name {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: clamp(2.5rem, 8vw, 7rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -2px;
@@ -132,6 +132,7 @@ nav {
     margin-top: 3rem;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 button {
@@ -184,7 +185,7 @@ button {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
     border-radius: 50%;
     filter: blur(40px);
 }
@@ -195,18 +196,106 @@ button {
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
     border-radius: 50%;
     filter: blur(40px);
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.title { animation: fadeIn 0.8s ease-out forwards; animation-delay: 0.1s; opacity: 0; }
-.subtitle { animation: fadeIn 0.8s ease-out forwards; animation-delay: 0.3s; opacity: 0; }
-.time-container { animation: fadeIn 0.8s ease-out forwards; animation-delay: 0.5s; opacity: 0; }
-.cta-buttons { animation: fadeIn 0.8s ease-out forwards; animation-delay: 0.7s; opacity: 0; }
+.title {
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.subtitle {
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.time-container {
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.cta-buttons {
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+    opacity: 0;
+}
+
+/* Media Queries for Responsive Web Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+    }
+
+    .content {
+        margin-top: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    .time-display {
+        font-size: 1.8rem;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem 5%;
+    }
+
+    .name {
+        letter-spacing: -1px;
+    }
+
+    .time-container {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .time-display {
+        font-size: 1.5rem;
+    }
+}
